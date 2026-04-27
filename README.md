@@ -2,7 +2,7 @@
 
 A music recommender that takes a plain-English description of what you want to listen to and returns matching songs from a curated catalog, complete with a short explanation of why each one fits.
 
-**Live walkthrough:** [Loom video coming soon]
+**Live walkthrough:** [Loom video](https://www.loom.com/share/48bd4b3b0e4440e1ac31295e6a1369a6)
 
 ---
 
