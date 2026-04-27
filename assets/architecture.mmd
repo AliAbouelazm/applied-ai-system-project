@@ -1,0 +1,25 @@
+flowchart TD
+    A([User types a natural language query]) --> B
+
+    subgraph Guardrails
+        B[Input Validation\nempty check · length cap]
+    end
+
+    B --> C
+
+    subgraph RAG Pipeline
+        C[LLM Parser\nClaude extracts genre / mood / energy] --> D
+        D[Retriever\nScoring algorithm ranks catalog songs] --> E
+        E[Top-K Retrieved Songs] --> F
+        F[LLM Generator\nClaude writes personalized recommendation]
+    end
+
+    H[(Song Catalog\ndata/songs.csv)] --> D
+
+    F --> G([Response displayed in UI + written to log])
+
+    L[Logger] -.->|records every step| C
+    L -.-> D
+    L -.-> F
+
+    EV[Eval Harness\neval.py] -->|automated test cases| C
